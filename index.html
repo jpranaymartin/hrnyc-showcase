@@ -11,22 +11,23 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   <!-- Icons to support Material Design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="./main.css" />
   <title>HRNYC Showcase</title>
 </head>
 <body>
   <div id="app"></div>
 
   <script type="text/babel">
-    const items9 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9"]
-    const items3 = ["item1", "item2", "item3"]
+    const mvpTitle = ["Engineer\'s Name Here1", "Engineer\'s Name Here2", "Engineer\'s Name Here3", "Engineer\'s Name Here4", "Engineer\'s Name Here5", "Engineer\'s Name Here6", "Engineer\'s Name Here7", "Engineer\'s Name Here8", "Engineer\'s Name Here9"]
+    
 
     // dataSet.length / 3 rounded up determine the number of rows
-    const numberOfRowsNeeded = Math.ceil(items9.length/3);
+    const numberOfRowsNeeded = Math.ceil(mvpTitle.length/3);
 
     // slice up the data set based on numberOfRows
 
     const sliceRows = function (numberOfRows) {
-      let copy = items9.slice();
+      let copy = mvpTitle.slice();
       // if n = 2, we need two rows
       const result = []
 
@@ -39,12 +40,9 @@
       return result;
     }
 
-    const dataRows = sliceRows(numberOfRowsNeeded)
-    console.log('dataRows: ', dataRows);
+    const dataRows = sliceRows(numberOfRowsNeeded);
 
-    console.log('items9', items9);
-
-    const { Paper, Grid } = MaterialUI
+    const { Paper, Grid, Card, CardActionArea, CardActions, CardMedia, Button, Typography, CardContent } = MaterialUI
 
     const useStyles = MaterialUI.makeStyles(theme => ({
       root: {
@@ -57,6 +55,48 @@
       },
     }));
 
+    const cardStyles = MaterialUI.makeStyles({
+      card: {
+        maxWidth: 345,
+      },
+      media: {
+        height: 140,
+      },
+    });
+
+    function MediaCard() {
+      const classes = cardStyles();
+
+      return (
+        <Card className={classes.card}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="/static/images/cards/contemplative-reptile.jpg"
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                MVP Title Name Here
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Short Description for your MVP here showcasing the most important features and the tech stack used to make it.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              Go To Project
+            </Button>
+            <Button size="small" color="primary">
+              Engineer's Repo
+            </Button>
+          </CardActions>
+        </Card>
+      );
+    }
+
+
     function GridEntry(props) {
       console.log('GridEntry props: ', props);
 
@@ -65,6 +105,7 @@
       return (
         <Grid item xs={4}>
           <Paper className={classes.paper}>{props.entry}</Paper>
+          <MediaCard/>
         </Grid>
       )
     }
@@ -115,7 +156,7 @@
       render() {
         return (
           <div className="app-content">
-            <h1>Hey, Brett</h1>
+            <h1>Hack Reactor-NYC Minimum Viable Product Talent Showcase</h1>
             <NestedGrid dataRows={dataRows}/>
           </div>
         )
