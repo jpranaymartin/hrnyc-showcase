@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <head>
-  <script src=" https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+  <title>HRNYC Showcase</title>
 </head>
 <body>
-  Hello World
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      render() {
+        return (
+          <div className="app-content">
+            <h1>Hey, ninja</h1>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('app'));
+  </script>
 </body>
