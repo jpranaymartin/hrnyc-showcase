@@ -5,18 +5,93 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.development.js" crossorigin="anonymous"></script>
+  <!-- Fonts to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <!-- Icons to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <title>HRNYC Showcase</title>
 </head>
 <body>
   <div id="app"></div>
 
   <script type="text/babel">
+
+  const { Paper, Grid } = MaterialUI
+
+    const useStyles = MaterialUI.makeStyles(theme => ({
+      root: {
+        flexGrow: 1,
+      },
+      paper: {
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+      },
+    }));
+
+    function GridItem() {
+      
+    }
+
+    const items9 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9"]
+    const items3 = ["item1", "item2", "item3"]
+
+    function GridEntry(props) {
+      console.log('props: ', props);
+
+      const classes = useStyles();
+
+      return (
+        <Grid item xs={4}>
+          <Paper className={classes.paper}>{props.entry}</Paper>
+        </Grid>
+      )
+
+    }
+    
+    function NestedGrid() {
+      const classes = useStyles();
+
+      function FormRow() {
+        // each grid below is a column
+        // for each item populate jsx
+        // console.log('items3', items3);
+        return (
+          <React.Fragment>
+            { items3.map(entry => {
+                return <GridEntry entry={entry}/>
+            })}
+          </React.Fragment>
+        );
+      }
+
+      // for every dataSet mod 3 > 0 => create a new row
+      console.log('items9', items9);
+      return (
+        <div className={classes.root}>
+          <Grid container spacing={1}>
+            <Grid container item xs={12} spacing={3}>
+              <FormRow />
+            </Grid>
+            <Grid container item xs={12} spacing={3}>
+              <FormRow />
+            </Grid>
+            <Grid container item xs={12} spacing={3}>
+              <FormRow />
+            </Grid>
+          </Grid>
+        </div>
+      );
+    }
+
     class App extends React.Component {
       render() {
         return (
           <div className="app-content">
             <h1>Hey, ninja</h1>
+            <NestedGrid/>
           </div>
         )
       }
@@ -25,3 +100,4 @@
     ReactDOM.render(<App/>, document.getElementById('app'));
   </script>
 </body>
+
