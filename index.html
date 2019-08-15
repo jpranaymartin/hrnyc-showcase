@@ -1,8 +1,128 @@
 <!DOCTYPE html>
 <head>
-  <script src=" https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.development.js" crossorigin="anonymous"></script>
+  <!-- Fonts to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <!-- Icons to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <title>HRNYC Showcase</title>
 </head>
 <body>
-  Hello World
+  <div id="app"></div>
+
+  <script type="text/babel">
+    const items9 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9"]
+    const items3 = ["item1", "item2", "item3"]
+
+    // dataSet.length / 3 rounded up determine the number of rows
+    const numberOfRowsNeeded = Math.ceil(items9.length/3);
+
+    // slice up the data set based on numberOfRows
+
+    const sliceRows = function (numberOfRows) {
+      let copy = items9.slice();
+      // if n = 2, we need two rows
+      const result = []
+
+      while(numberOfRows > 0) {
+        result.push( copy.slice(0, 3));
+        copy = copy.splice(3)
+        numberOfRows--;
+      }
+
+      return result;
+    }
+
+    const dataRows = sliceRows(numberOfRowsNeeded)
+    console.log('dataRows: ', dataRows);
+
+    console.log('items9', items9);
+
+    const { Paper, Grid } = MaterialUI
+
+    const useStyles = MaterialUI.makeStyles(theme => ({
+      root: {
+        flexGrow: 1,
+      },
+      paper: {
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+      },
+    }));
+
+    function GridEntry(props) {
+      console.log('GridEntry props: ', props);
+
+      const classes = useStyles();
+
+      return (
+        <Grid item xs={4}>
+          <Paper className={classes.paper}>{props.entry}</Paper>
+        </Grid>
+      )
+    }
+    function GridRow(props) {
+      console.log('GridRow props: ', props);
+
+      const classes = useStyles();
+
+      function FormRow(props) {
+        // each grid below is a column
+        // for each item populate jsx
+        // console.log('items3', items3);
+        return (
+          <React.Fragment>
+            { props.row.map(entry => {
+                return <GridEntry entry={entry} key={entry}/>
+            })}
+          </React.Fragment>
+        );
+      }
+
+      return (
+        <Grid container item xs={12} spacing={3}>
+          <FormRow row={props.row}/>
+        </Grid>
+      )
+      
+    }
+
+    function NestedGrid(props) {
+      console.log('NestedGrid props: ', props);
+      const classes = useStyles();
+
+      return (
+        <div className={classes.root}>
+          <Grid container spacing={1}>
+            { 
+              props.dataRows.map( row => {
+                return <GridRow row={row} key={JSON.stringify(row)}/>
+              })
+            }
+          </Grid>
+        </div>
+      );
+    }
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div className="app-content">
+            <h1>Hey, Brett</h1>
+            <NestedGrid dataRows={dataRows}/>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('app'));
+  </script>
 </body>
+
