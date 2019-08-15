@@ -17,8 +17,34 @@
   <div id="app"></div>
 
   <script type="text/babel">
+    const items9 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9"]
+    const items3 = ["item1", "item2", "item3"]
 
-  const { Paper, Grid } = MaterialUI
+    // dataSet.length / 3 rounded up determine the number of rows
+    const numberOfRowsNeeded = Math.ceil(items9.length/3);
+
+    // slice up the data set based on numberOfRows
+
+    const sliceRows = function (numberOfRows) {
+      let copy = items9.slice();
+      // if n = 2, we need two rows
+      const result = []
+
+      while(numberOfRows > 0) {
+        result.push( copy.slice(0, 3));
+        copy = copy.splice(3)
+        numberOfRows--;
+      }
+
+      return result;
+    }
+
+    const dataRows = sliceRows(numberOfRowsNeeded)
+    console.log('dataRows: ', dataRows);
+
+    console.log('items9', items9);
+
+    const { Paper, Grid } = MaterialUI
 
     const useStyles = MaterialUI.makeStyles(theme => ({
       root: {
@@ -31,15 +57,8 @@
       },
     }));
 
-    function GridItem() {
-      
-    }
-
-    const items9 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9"]
-    const items3 = ["item1", "item2", "item3"]
-
     function GridEntry(props) {
-      console.log('props: ', props);
+      console.log('GridEntry props: ', props);
 
       const classes = useStyles();
 
@@ -48,39 +67,45 @@
           <Paper className={classes.paper}>{props.entry}</Paper>
         </Grid>
       )
-
     }
-    
-    function NestedGrid() {
+    function GridRow(props) {
+      console.log('GridRow props: ', props);
+
       const classes = useStyles();
 
-      function FormRow() {
+      function FormRow(props) {
         // each grid below is a column
         // for each item populate jsx
         // console.log('items3', items3);
         return (
           <React.Fragment>
-            { items3.map(entry => {
-                return <GridEntry entry={entry}/>
+            { props.row.map(entry => {
+                return <GridEntry entry={entry} key={entry}/>
             })}
           </React.Fragment>
         );
       }
 
-      // for every dataSet mod 3 > 0 => create a new row
-      console.log('items9', items9);
+      return (
+        <Grid container item xs={12} spacing={3}>
+          <FormRow row={props.row}/>
+        </Grid>
+      )
+      
+    }
+
+    function NestedGrid(props) {
+      console.log('NestedGrid props: ', props);
+      const classes = useStyles();
+
       return (
         <div className={classes.root}>
           <Grid container spacing={1}>
-            <Grid container item xs={12} spacing={3}>
-              <FormRow />
-            </Grid>
-            <Grid container item xs={12} spacing={3}>
-              <FormRow />
-            </Grid>
-            <Grid container item xs={12} spacing={3}>
-              <FormRow />
-            </Grid>
+            { 
+              props.dataRows.map( row => {
+                return <GridRow row={row} key={JSON.stringify(row)}/>
+              })
+            }
           </Grid>
         </div>
       );
@@ -90,8 +115,8 @@
       render() {
         return (
           <div className="app-content">
-            <h1>Hey, ninja</h1>
-            <NestedGrid/>
+            <h1>Hey, Brett</h1>
+            <NestedGrid dataRows={dataRows}/>
           </div>
         )
       }
