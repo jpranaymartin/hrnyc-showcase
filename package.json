@@ -4,7 +4,9 @@
   "description": "MVP Talent Showcase",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p",
+    "dev": "webpack -p --watch",
+    "start": "open ./dist/index.html"
   },
   "repository": {
     "type": "git",

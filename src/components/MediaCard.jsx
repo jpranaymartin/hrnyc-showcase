@@ -39,12 +39,16 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Go To Project
-        </Button>
-        <Button size="small" color="primary">
-          Engineer's Repo
-        </Button>
+        <a href={props.project.linkToProject}>
+          <Button size="small" color="primary">
+            Go To Project
+          </Button>
+        </a>
+        <a href={props.project.linkToRepo}>
+          <Button size="small" color="primary">
+            Engineer's Repo
+          </Button>
+        </a>
       </CardActions>
     </Card>
   );
