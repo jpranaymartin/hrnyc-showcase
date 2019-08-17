@@ -38,6 +38,14 @@
     "linkToProject": "",
     "linkToRepo": "https://github.com/sintur2527/basketballGM",
     "imgLink": "https://i.ibb.co/jhWMM0F/basketball-GM-cropped.png"
+  },
+  {
+    "name": "Andrew Kan",
+    "mvpTitle": "My Expenses",
+    "mvpDescription": "Expenses tracker created using React-Redux and Postgres.",
+    "linkToProject": "https://mah-expenses.herokuapp.com/",
+    "linkToRepo": "https://github.com/Andrewkn09/expense-tracker",
+    "imgLink": "https://raw.githubusercontent.com/Andrewkn09/expense-tracker/master/documentation/images/Expenses.png"
   }
   
 ]
