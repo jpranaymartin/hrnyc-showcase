@@ -6,6 +6,38 @@
     "linkToProject": "http://cunningbrett.com",
     "linkToRepo": "http://www.github.com/MrSankofa",
     "imgLink": "https://www.defendanimals.com/images_designs/akita-inu-mans-best-friend-d001013854734.png"
+  },
+  {
+    "name": "Kevin Park",
+    "mvpTitle": "YouTube RealTime Tracker",
+    "mvpDescription": " Real-time count for YouTube Subscribers and media statistics",
+    "linkToProject": "https://github.com/kevypark/youtube-realtime-tracker",
+    "linkToRepo": "https://github.com/kevypark/youtube-realtime-tracker",
+    "imgLink": "https://raw.githubusercontent.com/kevypark/youtube-realtime-tracker/master/documentation/youtube-realtime-tracker-demo.gif"
+  },
+  {
+    "name": "Lance Rutkin",
+    "mvpTitle": "CityTeller",
+    "mvpDescription": "A React Native mobile app and React SPA web page connected by a Node/Mongo backend to allow stores to offer and customers to get cash back.",
+    "linkToProject": "https://blooming-springs-94129.herokuapp.com/",
+    "linkToRepo": "https://github.com/lancerutkin/city-teller-web",
+    "imgLink": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/money-bag_1f4b0.png"
+  },
+  {
+    "name": "Robert Battaglia",
+    "mvpTitle": "Trivia",
+    "mvpDescription": "Trivia React App using Open Trivia DB",
+    "linkToProject": "http://triva.herokuapp.com/",
+    "linkToRepo": "https://github.com/RobertBattaglia/trivia",
+    "imgLink": "https://raw.githubusercontent.com/RobertBattaglia/trivia/master/gifs/correct_answer.gif"
+  },
+  {
+    "name": "Soumith Inturi",
+    "mvpTitle": "Basketball GM",
+    "mvpDescription": "Manage a basketball team by making roster transactions and simulating games. Created using React Native.",
+    "linkToProject": "",
+    "linkToRepo": "https://github.com/sintur2527/basketballGM",
+    "imgLink": "https://i.ibb.co/D7pjtdN/basketball-GM-details.png"
   }
   
 ]
