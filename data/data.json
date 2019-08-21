@@ -46,6 +46,22 @@
     "linkToProject": "https://mah-expenses.herokuapp.com/",
     "linkToRepo": "https://github.com/Andrewkn09/expense-tracker",
     "imgLink": "https://raw.githubusercontent.com/Andrewkn09/expense-tracker/master/documentation/images/Expenses.png"
+  },
+  {
+    "name": “Hongwei Qin”,
+    "mvpTitle": “Keyboard Practice”,
+    "mvpDescription": “This app is to help people to improve keyboard typing skills. This simple app was created by React, HTML, and Express.”
+    "linkToProject": "ec2-3-95-137-69.compute-1.amazonaws.com",
+    "linkToRepo": "https://github.com/thunderbolt520/keyboard_practice",
+    "imgLink": "https://drive.google.com/open?id=1rgvbcBBp1okfLKzG2OyUUQcwk1ydZUMD"
+  },
+  {
+    "name": "Cali Tabilas",
+    "mvpTitle": "JS Trivia",
+    "mvpDescription": "Javascript spefic quiz app built using a MERN stack",
+    "linkToProject": "https://protected-retreat-15342.herokuapp.com/",
+    "linkToRepo": "https://github.com/cali3192/javascript-trivia",
+    "imgLink": "https://imgur.com/a/d8W8t4F"
   }
   
 ]
