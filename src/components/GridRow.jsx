@@ -4,15 +4,15 @@ import Grid from '@material-ui/core/Grid';
 import GridEntry from './GridEntry.jsx';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(1),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
+    color: theme.palette.text.secondary
+  }
 }));
 
 export default function GridRow(props) {
@@ -27,21 +27,18 @@ export default function GridRow(props) {
     // console.log('items3', items3);
     return (
       <React.Fragment>
-        { props.row.map(entry => {
-            return (<GridEntry entry={entry} key={entry}/>)
+        {props.row.map((entry) => {
+          return <GridEntry entry={entry} key={entry} />;
         })}
       </React.Fragment>
     );
   }
 
-  
-
   return (
     <Grid container item xs={12} spacing={3}>
-      <FormRow row={props.row}/>
+      <FormRow row={props.row} />
     </Grid>
-  )
-  
+  );
 }
 
 // import React from 'react';
@@ -57,9 +54,9 @@ export default function GridRow(props) {
 //     // console.log('items3', items3);
 //     return (
 //       <React.Fragment>
-        // { props.row.map(entry => {
-        //     return <GridEntry entry={entry} key={entry}/>
-        // })}
+// { props.row.map(entry => {
+//     return <GridEntry entry={entry} key={entry}/>
+// })}
 //       </React.Fragment>
 //     );
 //   }
@@ -69,6 +66,5 @@ export default function GridRow(props) {
 //       <FormRow row={props.row}/>
 //     </Grid>
 //   )
-  
-// }
 
+// }

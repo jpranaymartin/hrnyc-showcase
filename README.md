@@ -2,7 +2,7 @@
 
 Pending questions:
 1. How will this be updated?
-2. Currently to work the bundle will need to be updated from every change to the data.json file. 
+2. Currently to work the bundle will need to be updated from every change to the data.json file.
 
 
 Students will need to:
