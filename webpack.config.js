@@ -1,39 +1,24 @@
+const webpack = require('webpack');
 const path = require('path');
 
-const SRC_DIR = path.join(__dirname, './src/components');
-const DIST_DIR = path.join(__dirname, './dist');
-
-module.exports = {
-  entry: `${SRC_DIR}/index.jsx`,
+const config = {
+  entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000
-        }
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 };
+
+module.exports = config;

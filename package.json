@@ -1,36 +1,27 @@
 {
   "name": "hrnyc-showcase",
   "version": "1.0.0",
-  "description": "MVP Talent Showcase",
-  "main": "src/index.js",
-  "scripts": {
-    "build": "webpack -p",
-    "dev": "webpack -p --watch",
-    "start": "open ./dist/index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jpranaymartin/hrnyc-showcase.git"
-  },
-  "author": "Brett Cunningham II",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jpranaymartin/hrnyc-showcase/issues"
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack -d --mode development --watch",
+    "build-prod": "webpack -p --mode production"
   },
-  "homepage": "https://github.com/jpranaymartin/hrnyc-showcase#readme",
   "dependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^4.3.2",
-    "babel-loader": "^8.0.6",
-    "express": "^4.17.1",
-    "path": "^0.12.7",
+    "axios": "^0.19.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "webpack": "^4.39.2"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.6"
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
   }
 }

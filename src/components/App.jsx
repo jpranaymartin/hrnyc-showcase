@@ -1,37 +1,39 @@
 import React from 'react';
-import NestedGrid from './NestedGrid.jsx';
+import axios from 'axios';
 
-export default class App extends React.Component {
+const ProjectCard = ({project}) => {
+  return (
+    <div>
+      <img src={project.img_url} height="240" width="320"/>
+      <h2>{project.title}</h2>
+    </div>
+  )
+}
+
+class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { projects: [] };
   }
 
-  getNumberRowsNeeded() {
-    return Math.ceil(this.props.projects.length / 3);
-  }
-
-  getDataRows() {
-    let copy = this.props.projects.slice();
-    const result = [];
-    let numberOfRows = this.getNumberRowsNeeded();
-    console.log('numberOfRows: ', numberOfRows);
-
-    while (numberOfRows > 0) {
-      result.push(copy.slice(0, 3));
-      copy = copy.splice(3);
-      numberOfRows--;
-    }
-
-    console.log('result: ', result);
-    return result;
+  componentDidMount() {
+    axios.get('/data/data.json').then(({ data }) => {
+      const projects = data.slice(1)
+      console.log('data', projects[0]);
+      this.setState({ projects });
+    });
   }
 
   render() {
+    const { projects } = this.state;
     return (
-      <div className="app-content">
-        <h1>Hack Reactor-NYC Minimum Viable Product Talent Showcase</h1>
-        <NestedGrid dataRows={this.getDataRows()} />
+      <div>
+        {projects.map(project => {
+          return <ProjectCard project={project}/>
+        })}
       </div>
     );
   }
 }
+
+export default App;

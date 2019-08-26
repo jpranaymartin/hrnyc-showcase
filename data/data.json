@@ -1,67 +1,66 @@
 [
   {
     "name": "Example",
-    "mvpTitle": "Mans Best Friend",
-    "mvpDescription": "Short Description for your MVP here showcasing the most important features and the tech stack used to make it.",
-    "linkToProject": "http://cunningbrett.com",
-    "linkToRepo": "http://www.github.com/MrSankofa",
-    "imgLink": "https://www.defendanimals.com/images_designs/akita-inu-mans-best-friend-d001013854734.png"
+    "title": "Title of Your Project",
+    "description": "Short description for your project, focusing on the most important features or technical choices.",
+    "project_url": "http://example.com",
+    "repo_url": "http://www.github.com/example/test",
+    "img_url": "https://images.unsplash.com/photo-1543285198-3af15c4592ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
   },
   {
     "name": "Kevin Park",
-    "mvpTitle": "YouTube RealTime Tracker",
-    "mvpDescription": " Real-time count for YouTube Subscribers and media statistics",
-    "linkToProject": "https://github.com/kevypark/youtube-realtime-tracker",
-    "linkToRepo": "https://github.com/kevypark/youtube-realtime-tracker",
-    "imgLink": "https://raw.githubusercontent.com/kevypark/youtube-realtime-tracker/master/documentation/youtube-realtime-tracker-demo.gif"
+    "title": "YouTube RealTime Tracker",
+    "description": " Real-time count for YouTube Subscribers and media statistics",
+    "project_url": "https://github.com/kevypark/youtube-realtime-tracker",
+    "repo_url": "https://github.com/kevypark/youtube-realtime-tracker",
+    "img_url": "https://raw.githubusercontent.com/kevypark/youtube-realtime-tracker/master/documentation/youtube-realtime-tracker-demo.gif"
   },
   {
     "name": "Lance Rutkin",
-    "mvpTitle": "CityTeller",
-    "mvpDescription": "A React Native mobile app and React SPA web page connected by a Node/Mongo backend to allow stores to offer and customers to get cash back.",
-    "linkToProject": "https://blooming-springs-94129.herokuapp.com/",
-    "linkToRepo": "https://github.com/lancerutkin/city-teller-web",
-    "imgLink": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/money-bag_1f4b0.png"
+    "title": "CityTeller",
+    "description": "A React Native mobile app and React SPA web page connected by a Node/Mongo backend to allow stores to offer and customers to get cash back.",
+    "project_url": "https://blooming-springs-94129.herokuapp.com/",
+    "repo_url": "https://github.com/lancerutkin/city-teller-web",
+    "img_url": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/money-bag_1f4b0.png"
   },
   {
     "name": "Robert Battaglia",
-    "mvpTitle": "Trivia",
-    "mvpDescription": "Trivia React App using Open Trivia DB",
-    "linkToProject": "http://triva.herokuapp.com/",
-    "linkToRepo": "https://github.com/RobertBattaglia/trivia",
-    "imgLink": "https://raw.githubusercontent.com/RobertBattaglia/trivia/master/gifs/correct_answer.gif"
+    "title": "Trivia",
+    "description": "Trivia React App using Open Trivia DB",
+    "project_url": "http://triva.herokuapp.com/",
+    "repo_url": "https://github.com/RobertBattaglia/trivia",
+    "img_url": "https://raw.githubusercontent.com/RobertBattaglia/trivia/master/gifs/correct_answer.gif"
   },
   {
     "name": "Soumith Inturi",
-    "mvpTitle": "Basketball GM",
-    "mvpDescription": "Manage a basketball team by making roster transactions and simulating games. Created using React Native.",
-    "linkToProject": "",
-    "linkToRepo": "https://github.com/sintur2527/basketballGM",
-    "imgLink": "https://i.ibb.co/jhWMM0F/basketball-GM-cropped.png"
+    "title": "Basketball GM",
+    "description": "Manage a basketball team by making roster transactions and simulating games. Created using React Native.",
+    "project_url": "",
+    "repo_url": "https://github.com/sintur2527/basketballGM",
+    "img_url": "https://i.ibb.co/jhWMM0F/basketball-GM-cropped.png"
   },
   {
     "name": "Andrew Kan",
-    "mvpTitle": "My Expenses",
-    "mvpDescription": "Expenses tracker created using React-Redux and Postgres.",
-    "linkToProject": "https://mah-expenses.herokuapp.com/",
-    "linkToRepo": "https://github.com/Andrewkn09/expense-tracker",
-    "imgLink": "https://raw.githubusercontent.com/Andrewkn09/expense-tracker/master/documentation/images/Expenses.png"
+    "title": "My Expenses",
+    "description": "Expenses tracker created using React-Redux and Postgres.",
+    "project_url": "https://mah-expenses.herokuapp.com/",
+    "repo_url": "https://github.com/Andrewkn09/expense-tracker",
+    "img_url": "https://raw.githubusercontent.com/Andrewkn09/expense-tracker/master/documentation/images/Expenses.png"
   },
   {
     "name": "Hongwei Qin",
-    "mvpTitle": "Keyboard Practice",
-    "mvpDescription": "This app is to help people to improve keyboard typing skills. This simple app was created by React, HTML, and Express.",
-    "linkToProject": "ec2-3-95-137-69.compute-1.amazonaws.com",
-    "linkToRepo": "https://github.com/thunderbolt520/keyboard_practice",
-    "imgLink": "https://drive.google.com/open?id=1rgvbcBBp1okfLKzG2OyUUQcwk1ydZUMD"
+    "title": "Keyboard Practice",
+    "description": "This app is to help people to improve keyboard typing skills. This simple app was created by React, HTML, and Express.",
+    "project_url": "ec2-3-95-137-69.compute-1.amazonaws.com",
+    "repo_url": "https://github.com/thunderbolt520/keyboard_practice",
+    "img_url": "https://drive.google.com/open?id=1rgvbcBBp1okfLKzG2OyUUQcwk1ydZUMD"
   },
   {
     "name": "Cali Tabilas",
-    "mvpTitle": "JS Trivia",
-    "mvpDescription": "Javascript spefic quiz app built using a MERN stack",
-    "linkToProject": "https://protected-retreat-15342.herokuapp.com/",
-    "linkToRepo": "https://github.com/cali3192/javascript-trivia",
-    "imgLink": "https://imgur.com/a/d8W8t4F"
+    "title": "JS Trivia",
+    "description": "Javascript spefic quiz app built using a MERN stack",
+    "project_url": "https://protected-retreat-15342.herokuapp.com/",
+    "repo_url": "https://github.com/cali3192/javascript-trivia",
+    "img_url": "https://imgur.com/a/d8W8t4F"
   }
-
 ]
