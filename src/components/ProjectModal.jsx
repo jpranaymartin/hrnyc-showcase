@@ -26,10 +26,10 @@ const ProjectModal = (props) => {
         </section>
 
         <footer className="modal-card-foot">
-          <a href={props.project.linkToProject} class="card-footer-item">
+          <a href={props.project.linkToProject} target="_blank" class="card-footer-item">
             Explore The Project
           </a>
-          <a href={props.project.linkToRepo} class="card-footer-item">
+          <a href={props.project.linkToRepo} target="_blank" class="card-footer-item">
             Engineer's Repo
           </a>
         </footer>

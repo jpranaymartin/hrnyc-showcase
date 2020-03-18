@@ -13,7 +13,7 @@ const App = (props) => {
   };
 
   useEffect(() => {
-    if (searchWord.length > 3) {
+    if (searchWord.length >= 3) {
       let newList = projects.filter((project) => {
         return (
           project.name.toUpperCase().includes(searchWord.toUpperCase()) ||
