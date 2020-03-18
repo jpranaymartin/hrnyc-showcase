@@ -8,7 +8,7 @@ const ProjectList = (props) => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        paddingLeft: "0",
+        paddingLeft: "2vw",
         marginTop: "10vh",
         justifyContent: "space-evenly"
       }}

@@ -13,19 +13,12 @@ const Navbar = (props) => {
       className="navbar is-transaprent is-fullwidth"
       role="navigation"
       aria-label="main navigation"
+      style={{paddingTop:"1vh",paddingBottom:"1vh"}}
     >
       <div className="navbar-brand">
         <a className="navbar-item" href="https://www.hackreactor.com/">
-          <img src={"./hrhq-avatar.png"} height="30" />
+          <img src={"./hack-reactor-logo.png"} />
         </a>
-      </div>
-
-      <div className="navbar-menu">
-        <div className="navbar-start">
-          <h1 className="navbar-item has-text-weight-bold is-uppercase">
-            Hack Reactor-NYC
-          </h1>
-        </div>
       </div>
 
       <div className="navbar-end">
