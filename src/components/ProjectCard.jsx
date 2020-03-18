@@ -6,13 +6,12 @@ const ProjectCard = (props) => {
 
   const toggleModal = ()=>{
     setModalActive(!modalActive);
-    console.log("DSAFADSFA")
   }
 
   return (
     <div class="card" style={{ flex: "0 0 31%", margin: "1vh"}}>
-      <div class="card-image">
-        <figure class="image is-4by3">
+      <div class="card-image" style={{padding: "10px"}}>
+        <figure class="image is-4by3" style={{border: "1px solid #9e9e9e"}}>
           <img src={props.project.imgLink} alt="Placeholder image" onClick={toggleModal} style={{cursor:"pointer"}}/>
         </figure>
       </div>

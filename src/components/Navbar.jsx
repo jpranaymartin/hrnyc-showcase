@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import RegisterModal from "./RegisterModal.jsx";
 
 const Navbar = (props) => {
+  const [registerModalActive, setRegisterModalActive] = useState(false);
+
+  const toggleModal = () => {
+    setRegisterModalActive(!registerModalActive);
+  };
+
   return (
-    <nav className="navbar is-transaprent is-fullwidth" role="navigation" aria-label="main navigation" >
+    <nav
+      className="navbar is-transaprent is-fullwidth"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="navbar-brand">
         <a className="navbar-item" href="https://www.hackreactor.com/">
           <img src={"./hrhq-avatar.png"} height="30" />
@@ -35,12 +46,10 @@ const Navbar = (props) => {
           </div>
         </div>
         <div className="navbar-item">
-          <button
-            className="button is-active is-rounded"
-            onClick={props.handleRegButtonClick}
-          >
+          <button className="button is-active is-rounded" onClick={toggleModal}>
             <strong>Register a Project!</strong>
           </button>
+          <RegisterModal toggleModal={toggleModal} registerModalActive={registerModalActive}/>
         </div>
       </div>
     </nav>

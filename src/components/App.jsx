@@ -9,21 +9,23 @@ const App = (props) => {
   const [displayProjectList, setDisplayProjectList] = useState(projects);
 
   const handleSearchChange = (e) => {
-    setSearchWord(e.target.value.toUpperCase());
+    setSearchWord(e.target.value);
   };
 
-  const handleRegButtonClick = () => {};
-
-  useEffect(()=>{
-    if(searchWord.length > 3){
-      let newList = projects.filter((project)=>{
-        return (project.name.toUpperCase().includes(searchWord) || project.mvpTitle.toUpperCase().includes(searchWord) || project.mvpDescription.toUpperCase().includes(searchWord))
-      })
+  useEffect(() => {
+    if (searchWord.length > 3) {
+      let newList = projects.filter((project) => {
+        return (
+          project.name.toUpperCase().includes(searchWord.toUpperCase()) ||
+          project.mvpTitle.toUpperCase().includes(searchWord.toUpperCase()) ||
+          project.mvpDescription.toUpperCase().includes(searchWord.toUpperCase())
+        );
+      });
       setDisplayProjectList(newList);
-    }else{
+    } else {
       setDisplayProjectList(projects);
     }
-  },[searchWord]);
+  }, [searchWord]);
 
   return (
     <div className="app-content">
@@ -31,10 +33,9 @@ const App = (props) => {
         searchWord={searchWord}
         setSearchWord={setSearchWord}
         handleSearchChange={handleSearchChange}
-        handleRegButtonClick={handleRegButtonClick}
       />
       <Banner />
-      <ProjectList projects={displayProjectList}/>
+      <ProjectList projects={displayProjectList} />
     </div>
   );
 };
