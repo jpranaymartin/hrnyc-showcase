@@ -1,37 +1,43 @@
-import React from 'react';
-import NestedGrid from './NestedGrid.jsx';
+import React, { useState, useEffect } from "react";
+import Navbar from "./Navbar.jsx";
+import ProjectList from "./ProjectList.jsx";
+import Banner from "./Banner.jsx";
+const projects = require("../../data/data.json");
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const App = (props) => {
+  const [searchWord, setSearchWord] = useState("");
+  const [displayProjectList, setDisplayProjectList] = useState(projects);
 
-  getNumberRowsNeeded() {
-    return Math.ceil(this.props.projects.length / 3);
-  }
+  const handleSearchChange = (e) => {
+    setSearchWord(e.target.value);
+  };
 
-  getDataRows() {
-    let copy = this.props.projects.slice();
-    const result = [];
-    let numberOfRows = this.getNumberRowsNeeded();
-    console.log('numberOfRows: ', numberOfRows);
-
-    while (numberOfRows > 0) {
-      result.push(copy.slice(0, 3));
-      copy = copy.splice(3);
-      numberOfRows--;
+  useEffect(() => {
+    if (searchWord.length >= 3) {
+      let newList = projects.filter((project) => {
+        return (
+          project.name.toUpperCase().includes(searchWord.toUpperCase()) ||
+          project.mvpTitle.toUpperCase().includes(searchWord.toUpperCase()) ||
+          project.mvpDescription.toUpperCase().includes(searchWord.toUpperCase())
+        );
+      });
+      setDisplayProjectList(newList);
+    } else {
+      setDisplayProjectList(projects);
     }
+  }, [searchWord]);
 
-    console.log('result: ', result);
-    return result;
-  }
+  return (
+    <div className="app-content">
+      <Navbar
+        searchWord={searchWord}
+        setSearchWord={setSearchWord}
+        handleSearchChange={handleSearchChange}
+      />
+      <Banner />
+      <ProjectList projects={displayProjectList} />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div className="app-content">
-        <h1>Hack Reactor-NYC Minimum Viable Product Talent Showcase</h1>
-        <NestedGrid dataRows={this.getDataRows()} />
-      </div>
-    );
-  }
-}
+export default App;
